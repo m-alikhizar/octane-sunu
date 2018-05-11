@@ -1,0 +1,26 @@
+<div class="control box">
+	    
+	<div class="field is-grouped">
+	  <p class="control proposal" (click)="onCandidateClick(i)" *ngFor="let candidate of candidates; let i = index;">
+	    <a class="button is-primary is-large">
+	      <span class="icon is-small" *ngIf="candidate == proposal">
+	        <i class="fas fa-align-left">✓</i>
+	      </span>
+	      <span>{{candidate}}</span>
+	    </a>
+	  </p>
+	</div>
+
+  <div class="field has-addons" style="margin-top: 20px;">
+		<div class="control" style="width: 100%;">
+		  <input class="input is-large" type="text" [(ngModel)]="tokens" [disabled]="voting" placeholder="Votes in Tokens." />
+		</div>
+  	<div class="control">
+	  	<a class="button cast is-primary is-large" [ngClass]="{'is-loading':voting}" (click)="onVoteClick()">Vote</a>
+  	</div>
+	</div>
+</div>
+
+<div class="control" *ngIf="receipt">
+  <span><b>Transaction Hash: </b> {{receipt.transactionHash}}</span>
+</div>

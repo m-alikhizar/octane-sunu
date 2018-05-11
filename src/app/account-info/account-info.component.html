@@ -1,0 +1,30 @@
+<div class="columns">
+  <div class="column is-10 is-offset-1">
+    <div class="box is-shadowless">
+      <h1 class="is-6">
+        <span>Address: </span>
+        <span class='address'>{{account}}</span>
+      </h1>
+      <table class="table is-bordered is-fullwidth">
+		    <tbody>
+          <tr>
+            <th>Tokens</th>
+            <td class="tokens">{{userInfo?.tokens}}</td>
+          </tr>
+          <tr>
+            <th>Delegate</th>
+            <td style="word-break: break-all;">{{userInfo?.delegate}}</td>
+          </tr>
+          <tr>
+            <th>Voted</th>
+            <td class='voted'>{{userInfo?.voted}}</td>
+          </tr>
+          <tr>
+            <th>Proposal</th>
+            <td>{{userInfo?.proposal | toUTF8}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

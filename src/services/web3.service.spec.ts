@@ -7,6 +7,9 @@ describe('Web3Service', () => {
     TestBed.configureTestingModule({
       providers: [Web3Service]
     });
+
+    console.log('.');
+
   });
 
   it('should be created', inject([Web3Service], (service: Web3Service) => {

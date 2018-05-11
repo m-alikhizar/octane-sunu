@@ -1,0 +1,22 @@
+<h1 class="title is-4">Buy Tokens</h1>
+<table class="table is-bordered is-fullwidth is-narrow">
+  <tbody *ngFor="let info of tokensInfo | async">
+    <tr>
+      <th>Tokens Available</th>
+      <td class='available'>{{info.available}}</td>
+    </tr>
+    <tr>
+      <th>Price/token</th>
+      <td>{{info.price | fromWei}} Ether</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="field has-addons">
+  <div class="control" style="width: 100%;">
+    <input class="input" pattern="0|[1-9]\d*" type="text" [(ngModel)]="tokens" [disabled]="pending" placeholder="Number of tokens to buy.">
+  </div>
+  <div class="control">
+    <a class="button is-primary" [ngClass]="{'is-loading':pending}" (click)="buyTokens()">Buy Tokens</a>
+  </div>
+</div>

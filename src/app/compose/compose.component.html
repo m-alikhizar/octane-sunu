@@ -1,0 +1,9 @@
+<div class="box is-shadowless">
+	<div class="control box">
+		<app-radio-input [text]="'Vote for candidate'" [checked]="'checked'" (click)="onVoteOptClick()"></app-radio-input>
+		<app-radio-input [text]="'Delegate Vote'" (click)="onDelegateOptClick()"></app-radio-input>
+	</div>
+
+	<app-vote [account]="account" *ngIf="state == STATES.VOTE"></app-vote>
+	<app-delegate-vote [account]="account" *ngIf="state == STATES.DELEGATE"></app-delegate-vote>
+</div>

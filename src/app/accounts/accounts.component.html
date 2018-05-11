@@ -1,0 +1,23 @@
+<div class="columns">
+  <div class="column is-6 is-offset-3">
+    <div class="box is-shadowless">
+      <h1 class="title is-2">Accounts</h1>
+      <table class="table is-bordered is-fullwidth">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Account</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let account of accounts | async; let i = index;">
+            <td>{{i + 1}}</td>
+            <td class="address">{{account.address}}</td>
+            <td><a href="home/{{account.address}}" class="button is-info is-outlined">Select</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

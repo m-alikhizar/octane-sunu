@@ -1,3 +1,14 @@
 .has-underline {
   text-decoration: underline;
 }
+
+.connected:after {
+	content: ' ';
+    vertical-align: super;
+    background: #4bff00;
+    border-radius: 100%;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    margin-left: 6px;
+}

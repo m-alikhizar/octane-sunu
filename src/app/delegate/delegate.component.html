@@ -1,0 +1,20 @@
+<div class="control box">
+	<div class="field" style="margin-top: 20px;">
+    <div class="control">
+      <input class="input is-large" type="text" [(ngModel)]="delegateAddress" [disabled]="delegating" placeholder="Delegate Address">
+    </div>
+  </div>
+  <div class="field has-addons" style="margin-top: 20px;">
+    <div class="control" style="width: 100%;">
+      <input class="input is-large" type="text" [(ngModel)]="tokens" placeholder="Votes in Tokens." [disabled]="delegating">
+    </div>
+    <div class="control">
+     <a class="button is-primary is-large" [ngClass]="{'is-loading':delegating}" (click)="onDelegateClick()">Delegate</a>
+    </div>
+  </div>
+
+  <div class="control" *ngIf="receipt">
+    <span><b>Transaction Hash: </b> {{receipt.transactionHash}}</span>
+  </div>
+
+</div>
