@@ -20,12 +20,12 @@ before_script:
 script: 
   - ng test --watch false -cc
 #  - npm run e2e
-#  - ng build -bh "https://ahsanayaz.github.io/ng-traffic-ci/"
+  - ng build
 
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: 0716d3515b140f804e3eafe79ba36b6b16f7c843 # Set in travis-ci.org dashboard
-  local_dir: dist
-  on:
-    branch: master
+#deploy:
+#  provider: pages
+#  skip_cleanup: true
+#  github_token: 0716d3515b140f804e3eafe79ba36b6b16f7c843 # Set in travis-ci.org dashboard
+#  local_dir: dist
+#  on:
+#    branch: master
