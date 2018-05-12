@@ -19,8 +19,6 @@ describe('ComposeComponent', () => {
     fixture = TestBed.createComponent(ComposeComponent);
     component = fixture.componentInstance;
 
-    console.log('.');
-
   });
 
   it('should be created', () => {

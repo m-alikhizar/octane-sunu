@@ -37,8 +37,6 @@ describe('MainComponent', () => {
 
     fixture.detectChanges();
 
-    console.log('.');
-
   });
 
   it('should be created', () => {

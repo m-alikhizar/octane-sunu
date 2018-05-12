@@ -27,8 +27,6 @@ describe('AccountsComponent', () => {
     component = fixture.componentInstance;
     web3Service = TestBed.get(Web3Service);
 
-    console.log('.');
-
   });
 
   it('should be created', () => {

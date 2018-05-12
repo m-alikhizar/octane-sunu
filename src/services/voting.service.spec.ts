@@ -19,8 +19,6 @@ describe('VotingService', () => {
     service = TestBed.get(VotingService);
     web3Service = TestBed.get(Web3Service);
 
-    console.log('.');
-
   });
 
   it('should be created', inject([VotingService], (_service: VotingService) => {

@@ -2,12 +2,6 @@ import { canBeNumber } from './validation';
 
 describe('Validation of string; check if it can be a number', () => {
 
-  beforeEach(() => {
-
-    console.log('.');
-
-  });
-
   it('should return true', () => {
     const str = '12';
     const result = canBeNumber(str);

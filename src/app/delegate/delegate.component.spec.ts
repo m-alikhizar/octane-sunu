@@ -30,8 +30,6 @@ describe('DelegateComponent', () => {
     component = fixture.componentInstance;
     contract = TestBed.get(VotingService);
 
-    console.log('.');
-
   });
 
   it('should be created', () => {

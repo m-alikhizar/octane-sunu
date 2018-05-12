@@ -38,8 +38,6 @@ describe('AppComponent', () => {
 
     fixture.detectChanges();
 
-    console.log('.');
-
   });
 
   it('should create the app', async(() => {

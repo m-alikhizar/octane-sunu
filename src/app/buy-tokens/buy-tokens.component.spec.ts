@@ -35,8 +35,6 @@ describe('BuyTokensComponent', () => {
     component = fixture.componentInstance;
     contract = TestBed.get(VotingService);
 
-    console.log('.');
-
   });
 
   it('should be created', () => {

@@ -50,8 +50,6 @@ describe('AccountInfoComponent', () => {
     route = TestBed.get(ActivatedRoute);
     contract = TestBed.get(VotingService);
 
-    console.log('.');
-
   });
 
   it('should be created', () => {

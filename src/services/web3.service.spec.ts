@@ -8,8 +8,6 @@ describe('Web3Service', () => {
       providers: [Web3Service]
     });
 
-    console.log('.');
-
   });
 
   it('should be created', inject([Web3Service], (service: Web3Service) => {

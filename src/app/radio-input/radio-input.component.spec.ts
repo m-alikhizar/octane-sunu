@@ -18,8 +18,6 @@ describe('RadioInputComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
 
-    console.log('.');
-
   });
 
   it('should be created', () => {

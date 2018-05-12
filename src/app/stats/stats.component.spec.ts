@@ -29,8 +29,6 @@ describe('StatsComponent', () => {
     component = fixture.componentInstance;
     contract = TestBed.get(VotingService);
 
-    console.log('.');
-
   });
 
   it('should be created', () => {

@@ -32,8 +32,6 @@ describe('VoteComponent', () => {
 
     contract = TestBed.get(VotingService);
 
-    console.log('.');
-
   });
 
   it('should be created', () => {
