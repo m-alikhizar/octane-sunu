@@ -9,7 +9,6 @@ module.exports = {
       host: 'localhost',
       port: 8545,
       network_id: '*',
-      from: "0xff0103691ee2826f1dc916e117edd66b56c92964",
       gas: 6000000 // Gas limit used for deploys
     },
 
