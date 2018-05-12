@@ -19,7 +19,7 @@ before_script:
 
 script: 
   - ng test --watch false -cc
-  - npm run e2e
+#  - npm run e2e
 #  - ng build -bh "https://ahsanayaz.github.io/ng-traffic-ci/"
 
 deploy:
