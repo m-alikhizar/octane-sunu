@@ -21,6 +21,10 @@ before_install:
   - npm install -g truffle
 
 script:
+  - ganache-cli -p 7545 > /dev/null &
+  - sleep 5 
+  - truffle compile
+  - truffle migrate --network development
   - truffle test
   - ng lint
   - ng test --single-run
