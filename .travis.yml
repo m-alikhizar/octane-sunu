@@ -24,7 +24,6 @@ before_install:
 script:
   - ganache-cli 2> /dev/null 1> /dev/null &
   - sleep 5
-  - ganache-cli -p 7545
   - truffle migrate --reset
   - truffle test
   - ng lint
