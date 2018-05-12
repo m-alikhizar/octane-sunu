@@ -21,6 +21,7 @@ before_install:
 
 script: 
   - ng lint
-  - ng test
+  - truffle test
+  - ng test --single-run
   - ng build
 #  - npm run e2e
