@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Web3Service } from './web3.service';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 
-import { TokensInfo, AccountInfo } from '../app/models'
+import { TokensInfo, AccountInfo } from '../app/models';
+
+const json = require('../assets/data/Voting.json')
 
 const contract = require('truffle-contract');
 
@@ -20,24 +21,18 @@ export class VotingService {
 
   public tokenPrice: number;
 
-  constructor(private http: HttpClient, private web3Service: Web3Service) { }
+  constructor(private web3Service: Web3Service) { }
 
   public loadABI(): Observable<any> {
-    return Observable.create(observer => {
-      this.getJSON().subscribe(async (artifacts) => {
-        this.voting = contract(artifacts);
-        this.voting.setProvider(this.web3Service.web3.currentProvider);
+    return Observable.create(async observer => {
+      this.voting = contract(json);
+      this.voting.setProvider(this.web3Service.web3.currentProvider);
 
-        this.abi = await this.voting.deployed();
+      this.abi = await this.voting.deployed();
 
-        observer.next({loaded: true});
-        observer.complete();
-      });
+      observer.next({loaded: true});
+      observer.complete();
     })
-  }
-
-  public getJSON(): Observable<any> {
-    return this.http.get('https://www.jasonbase.com/things/Gxl8.json')
   }
 
   getUserInfo(account: string): Observable<AccountInfo> {
