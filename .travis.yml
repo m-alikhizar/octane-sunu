@@ -24,9 +24,10 @@ before_install:
 script:
   - ganache-cli 1> /dev/null &
   - sleep 5
+  - truffle compile
   - truffle migrate --reset
   - truffle test
   - ng lint
   - ng test --single-run
   - ng build
-#  - npm run e2e
+  - npm run e2e

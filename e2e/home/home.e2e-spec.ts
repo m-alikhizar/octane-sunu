@@ -43,13 +43,13 @@ describe('Home', () => {
 
   });
 
-  xit('should account status for vote defaults to false', async () => {
+  it('should account status for vote defaults to false', async () => {
 
     expect<any>(page.getVotedStatusText()).toBeFalsy();
 
   });
 
-  xit('should vote to proposal in tokens to display voted status true', async () => {
+  it('should vote to proposal in tokens to display voted status true', async () => {
 
     const tokens = await page.getTokensText();
 
