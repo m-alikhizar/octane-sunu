@@ -19,6 +19,6 @@ addons:
 
 script: 
   - ng lint
-  - ng test:headless
+  - ng test
   - ng build
 #  - npm run e2e
