@@ -22,7 +22,7 @@ before_install:
   - npm install -g ganache-cli truffle
 
 script:
-  - ganache-cli 2> /dev/null 1> /dev/null &
+  - ganache-cli 1> /dev/null &
   - sleep 5
   - truffle migrate --reset
   - truffle test
