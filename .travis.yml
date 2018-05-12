@@ -3,7 +3,7 @@ language: node_js
 node_js:
   - "9"
 
-sudo: true
+sudo: required
 dist: trusty
 
 branches:
@@ -16,10 +16,6 @@ cache:
 
 addons:
   chrome: stable
-
-before_script:
-    - "sudo chown root /opt/google/chrome/chrome-sandbox"
-    - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
 
 script: 
   - ng lint
