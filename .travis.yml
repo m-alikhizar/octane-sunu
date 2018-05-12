@@ -3,7 +3,7 @@ language: node_js
 node_js:
   - "9"
 
-sudo: false
+sudo: true
 dist: trusty
 
 branches:
@@ -19,6 +19,6 @@ addons:
 
 script: 
   - ng lint
-  - ng test --watch false -cc
+  - ng test:headless
   - ng build
 #  - npm run e2e
