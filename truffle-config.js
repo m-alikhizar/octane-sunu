@@ -2,23 +2,26 @@
 require('babel-register')
 // babel-polyfill as we need it to use async/await
 require('babel-polyfill')
+var path = require('path');
 
 module.exports = {
+
+  contracts_build_directory: path.join(__dirname, './src/assets/data'),
+
   networks: {
     development: {
-      host: 'localhost',
+      host: '127.0.0.1',
       port: 8545,
       network_id: '*',
-      from: "0xff0103691ee2826f1dc916e117edd66b56c92964",
       gas: 6000000 // Gas limit used for deploys
     },
 
- 	rinkeby: {
-	  host: "localhost", // Connect to geth on the specified
-	  port: 8545,
-	  network_id: '*',
-	  from: "0x955165032303993ecc8b29b02ad1591833b55c4b", // default address to use for any transaction Truffle makes during migrations
-	  gas: 470000 // Gas limit used for deploys
-	}
+   	rinkeby: {
+  	  host: "127.0.0.1", // Connect to geth on the specified
+  	  port: 8545,
+  	  network_id: '*',
+  	  from: "0x1389f33D3Cfaa922483e40F1B3EFCB613815a6cD", // default address to use for any transaction Truffle makes during migrations
+  	  gas: 470000 // Gas limit used for deploys
+  	}
   }
 }

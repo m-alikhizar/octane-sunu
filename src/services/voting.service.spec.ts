@@ -1,5 +1,4 @@
 import { TestBed, inject, fakeAsync, tick } from '@angular/core/testing';
-import { HttpClientModule } from '@angular/common/http';
 import { Web3Service } from './web3.service';
 import { AccountInfo, TokensInfo } from '../app/models';
 
@@ -12,8 +11,7 @@ describe('VotingService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [VotingService, Web3Service],
-      imports: [HttpClientModule]
+      providers: [VotingService, Web3Service]
     });
 
     service = TestBed.get(VotingService);
@@ -25,7 +23,7 @@ describe('VotingService', () => {
     expect(_service).toBeTruthy();
   }));
 
-  xit('should set loaded to true after loading ABI', (done: DoneFn) => {
+  it('should set loaded to true after loading ABI', (done: DoneFn) => {
 
     const exprected = {loaded: true};
 

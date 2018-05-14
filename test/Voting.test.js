@@ -1,4 +1,4 @@
-var DistrictBallot = artifacts.require("./DistrictBallot.sol");
+var DistrictBallot = artifacts.require("./Voting.sol");
 var Web3 = require("web3");
 require('babel-polyfill');
 

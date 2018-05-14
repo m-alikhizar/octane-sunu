@@ -1,10 +1,16 @@
-language: node_js
+sudo: required
+dist: trusty
 
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+language: node_js
 node_js:
   - "9"
-
-sudo: true
-dist: trusty
 
 branches:
   only:
@@ -14,11 +20,21 @@ cache:
   directories:
     - node_modules
 
-addons:
-  chrome: stable
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - npm install -g ganache-cli truffle
 
-script: 
+install:
+  - npm install
+
+script:
+  - ganache-cli 1> /dev/null &
+  - sleep 5
+  - truffle compile
+  - truffle migrate --reset
+  - truffle test
   - ng lint
-  - ng test
-  - ng build
-#  - npm run e2e
+  - ng test --single-run
+  - npm run e2e
+  - ng build -bh

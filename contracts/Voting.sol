@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18; // We have to specify what version of the compiler this code will use.
+pragma solidity ^0.4.22; // We have to specify what version of the compiler this code will use.
 
 contract Voting {
 
@@ -28,7 +28,7 @@ contract Voting {
   of tokens for sale, cost per token and all candidates
   */
 
-  function Voting(uint tokens, uint _tokenPrice, bytes32[] _candidates) public {
+  constructor(uint tokens, uint _tokenPrice, bytes32[] _candidates) public {
     for(uint i = 0; i < _candidates.length; i++) {
       candidates[_candidates[i]] = uint(0);
       candidatesIndex.push(_candidates[i]);
