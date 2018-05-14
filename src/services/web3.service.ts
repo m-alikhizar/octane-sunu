@@ -47,7 +47,7 @@ export class Web3Service {
         }
 
         observer.next(accounts.map(account => new AccountItem(account)));
-        observer.complete()
+        observer.complete();
       });
     });
   };

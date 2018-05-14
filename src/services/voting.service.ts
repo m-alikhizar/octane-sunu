@@ -7,14 +7,13 @@ import 'rxjs/add/operator/switchMap';
 
 import { TokensInfo, AccountInfo } from '../app/models';
 
-const json = require('../assets/data/Voting.json')
+const artifacts = require('../assets/data/Voting.json')
 
 const contract = require('truffle-contract');
 
 @Injectable()
 export class VotingService {
 
-  private voting: any;
   private subject = new Subject<any>();
 
   public abi: any;
@@ -25,10 +24,10 @@ export class VotingService {
 
   public loadABI(): Observable<any> {
     return Observable.create(async observer => {
-      this.voting = contract(json);
-      this.voting.setProvider(this.web3Service.web3.currentProvider);
 
-      this.abi = await this.voting.deployed();
+      const voting = contract(artifacts);
+      voting.setProvider(this.web3Service.web3.currentProvider);
+      this.abi = await voting.deployed();
 
       observer.next({loaded: true});
       observer.complete();
