@@ -14,7 +14,7 @@
           <tr *ngFor="let account of accounts | async; let i = index;">
             <td>{{i + 1}}</td>
             <td class="address">{{account.address}}</td>
-            <td><a href="home/{{account.address}}" class="button is-info is-outlined">Select</a></td>
+            <td><a href="#/home/{{account.address}}" class="button is-info is-outlined">Select</a></td>
           </tr>
         </tbody>
       </table>
