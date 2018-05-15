@@ -2,9 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { VotingService } from '../../services/services';
 
 import { Observable } from 'rxjs/Observable';
+import { tap } from 'rxjs/operators';
 import { TokensInfo } from '../models';
-import 'rxjs/add/operator/do';
-
 
 @Component({
   selector: 'app-buy-tokens',
@@ -34,11 +33,12 @@ export class BuyTokensComponent implements OnInit {
     this.pending = true;
 
     const receipt = this.votingService.buyTokens(this.tokens, this.account)
-    .do(() => {
-      this.tokens = 0;
-      this.pending = false;
-      this.tokensInfo = this.votingService.getTokensInfo();
-    }).subscribe();
+    .pipe(
+      tap(() => {
+        this.tokens = 0;
+        this.pending = false;
+        this.tokensInfo = this.votingService.getTokensInfo();
+      })
+    ).subscribe();
   }
 }
-

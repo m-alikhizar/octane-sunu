@@ -1,6 +1,7 @@
 import { Component, OnInit, ApplicationRef } from '@angular/core';
 import { Web3Service } from '../../services/services';
 import { Observable } from 'rxjs/Observable';
+import { tap } from 'rxjs/operators';
 import { AccountItem } from '../models';
 
 @Component({
@@ -19,11 +20,14 @@ export class AccountsComponent implements OnInit {
 
   ngOnInit() {
 
-    this.accounts = this.web3Service.getAccounts().do(() => {
+    this.accounts = this.web3Service.getAccounts()
+    .pipe(
+      tap(() => {
         // https://github.com/brave/browser-laptop/issues/13711
         setTimeout(() => {
             this.ref.tick();
         }, 0);
-    });
+      })
+    );
   }
 }

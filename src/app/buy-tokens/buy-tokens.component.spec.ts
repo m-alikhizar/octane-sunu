@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BuyTokensComponent } from './buy-tokens.component';
-import Pipes from '../pipes'
+import { FromWei } from '../pipes'
 
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -24,7 +24,7 @@ describe('BuyTokensComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ HttpModule, HttpClientModule, FormsModule ],
-      declarations: [ BuyTokensComponent, Pipes ],
+      declarations: [ BuyTokensComponent, FromWei ],
       providers: [ VotingService, Web3Service ]
     })
     .compileComponents();
