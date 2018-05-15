@@ -36,5 +36,5 @@ script:
   - truffle test
   - ng lint
   - ng test --watch false
-  - ng e2e
-  - ng build -base-href
+  - npm run e2e
+  - ng build --base-href
