@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 import {Web3Service, VotingService} from '../services/services';
-import Pipes from './pipes';
+import { ToUTF8, FromWei } from './pipes';
 
 import { AppRoutingModule } from './app.routing';
 import { AccountInfoComponent } from './account-info/account-info.component';
@@ -19,10 +19,7 @@ import { VoteComponent } from './vote/vote.component';
 import { DelegateComponent } from './delegate/delegate.component';
 import { RadioInputComponent } from './radio-input/radio-input.component'
 
-const SERVICES = [
-  Web3Service,
-  VotingService
-]
+const Pipes = [ ToUTF8, FromWei ];
 
 @NgModule({
   imports: [
@@ -45,7 +42,10 @@ const SERVICES = [
     RadioInputComponent,
     Pipes
   ],
-  providers: [SERVICES],
+  providers: [
+    Web3Service,
+    VotingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

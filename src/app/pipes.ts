@@ -38,9 +38,7 @@ class FromWei implements PipeTransform {
   }
 }
 
-const Pipes = [
-    ToUTF8,
-    FromWei
-];
-
-export default Pipes;
+export {
+  ToUTF8,
+  FromWei
+};

@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Web3Service } from './web3.service';
 import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/switchMap';
+import { Web3Service } from './web3.service';
 
 import { TokensInfo, AccountInfo } from '../app/models';
 

@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AccountInfoComponent } from './account-info.component';
-import Pipes from '../pipes'
+import { ToUTF8 } from '../pipes';
 
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -32,7 +32,7 @@ describe('AccountInfoComponent', () => {
 
     TestBed.configureTestingModule({
       imports: [ HttpModule, HttpClientModule ],
-      declarations: [ AccountInfoComponent, Pipes ],
+      declarations: [ AccountInfoComponent, ToUTF8 ],
       providers: [ VotingService, Web3Service,
         {
           provide: ActivatedRoute,

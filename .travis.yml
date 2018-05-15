@@ -35,6 +35,6 @@ script:
   - truffle migrate --reset
   - truffle test
   - ng lint
-  - ng test --single-run
+  - ng test --watch false
   - npm run e2e
-  - ng build -bh
+  - ng build --base-href
