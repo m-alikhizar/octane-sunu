@@ -112,413 +112,100 @@ Now if we change any thing in our 'Voting.sol' we need to create another migrati
 
 1. Install ganache (in memory blockchain) to execute tests locally:
 
+`ganache-cli` is written in Javascript and distributed as a Node package via `npm`.
+
 ``` shell
 npm install -g ganache-cli
-ganache-cli
 ```
 
-2. For Unit tests, run the following:
+2. To run the ganache-cli execute `ganache-cli` in terminal.
+
+3. To Unit test Solidity files, run the following:
+
+```
+truffle test
+```
+
+Output:
+![GitHub Logo](/src/assets/truffle-test-capture.png)
+
+
+4. For Unit tests, run the following:
 ```
 ng test --watch false
 ```
 
+Output:
 ![GitHub Logo](/src/assets/unit-test-capture.png)
 
 
-3. For E2E testing, run the following
+5. For E2E testing, run the following
 
 ```
 ng e2e
 ```
 
+Output:
 ![GitHub Logo](/src/assets/e2e-capture.png)
 
 # Code Covegate
 
+
+With the Angular CLI we can create code coverage reports. This allow us to see any parts of our code base that may not be properly tested by our unit tests. The output of code coverage reports are created with `coverage` inside the root directory project. To see the code-coverage run the following:
+
 ```
-ng test --code-coverage
+ng test --watch=false --code-coverage
 ```
+
+Output:
 ![GitHub Logo](/src/assets/code-coverage-capture.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```shell
-packagemanager install awesome-project
-awesome-project start
-awesome-project "Do something!"  # prints "Nah."
-
-``````
-constructor(uint tokens, uint _tokenPrice, bytes32[] _candidates) public {
-...
-
-totalTokens = tokens;
-balanceTokens = tokens;
-tokenPrice = _tokenPrice;
-}
-
-
-
-Here you should say what actually happens when you execute the code above.
-
-## Developing
-
-Here's a brief intro about what a developer must do in order to start developing
-the project further:
-
-```shell
-git clone https://github.com/your/awesome-project.git
-cd awesome-project/
-packagemanager install
+# Travis CI
+This application has a default build environment with the steps for testing, building and deploying in the following:
+```
+script:
+  - ganache-cli 1> /dev/null &
+  - sleep 5
+  - truffle compile
+  - truffle migrate --reset
+  - truffle test
+  - ng lint
+  - ng test --watch false
+  - npm run e2e
+  - ng build --base-href
 ```
 
-And state what happens step-by-step.
+# Contributing
 
-### Building
+* Bug fixes
+  - If you find a bug, please first report it using GitHub issues.
+  - If you'd like to submit a fix for a bug, create a Pull Request from your own fork and mention the issue number.
+*  New Features
+  - Describe the problem/feature request in a new GitHub issue.
+  - If you are developing a new feature. Please write corresponding Unit tests and e2e tests.
 
-If your project needs some additional steps for the developer to build the
-project after some code changes, state them here:
 
-```shell
-./configure
-make
-make install
+# Deploy the application online with IPFS
+
+0. Build the project, run the following:
+```
+ng build --base-href --prod
+```
+`ng build` compiles the application into an `~/dist` directory.
+
+1. Install IPFS from `https://ipfs.io/docs/install/`.
+
+2. After installing start IPFS daemon in new terminal to start a node, run the following:
+```
+ipfs daemon
 ```
 
-Here again you should state what actually happens when the code above gets
-executed.
+3. Add `dist/` directory to the network, run `ipfs add -r dist/` in separate terminal:
 
-### Deploying / Publishing
+4. To publish the content, run `ipfs name publish <hash-of-dist-directory>`
 
-In case there's some step you have to take that publishes this project to a
-server, this is the right time to state it.
+5. Navigate to https://gateway.ipfs.io/ipns/<your-publish-hash-here>
 
-```shell
-packagemanager deploy awesome-project -s server.com -u username -p password
-```
+# Licensing
 
-And again you'd need to tell what the previous code actually does.
-
-## Features
-
-What's all the bells and whistles this project can perform?
-* What's the main functionality
-* You can also do another thing
-* If you get really randy, you can even do this
-
-## Configuration
-
-Here you should write what are all of the configurations a user can enter when
-using the project.
-
-#### Argument 1
-Type: `String`  
-Default: `'default value'`
-
-State what an argument does and how you can use it. If needed, you can provide
-an example below.
-
-Example:
-```bash
-awesome-project "Some other value"  # Prints "You're nailing this readme!"
-```
-
-#### Argument 2
-Type: `Number|Boolean`  
-Default: 100
-
-Copy-paste as many of these as you need.
-
-## Contributing
-
-When you publish something open source, one of the greatest motivations is that
-anyone can just jump in and start contributing to your project.
-
-These paragraphs are meant to welcome those kind souls to feel that they are
-needed. You should state something like:
-
-"If you'd like to contribute, please fork the repository and use a feature
-branch. Pull requests are warmly welcome."
-
-If there's anything else the developer needs to know (e.g. the code style
-guide), you should link it here. If there's a lot of things to take into
-consideration, it is common to separate this section to its own file called
-`CONTRIBUTING.md` (or similar). If so, you should say that it exists here.
-
-## Links
-
-Even though this information can be found inside the project on machine-readable
-format like in a .json file, it's good to include a summary of most useful
-links to humans using your project. You can include links like:
-
-- Project homepage: https://your.github.com/awesome-project/
-- Repository: https://github.com/your/awesome-project/
-- Issue tracker: https://github.com/your/awesome-project/issues
-  - In case of sensitive bugs like security vulnerabilities, please contact
-    my@email.com directly instead of using issue tracker. We value your effort
-    to improve the security and privacy of this project!
-- Related projects:
-  - Your other project: https://github.com/your/other-project/
-  - Someone else's project: https://github.com/someones/awesome-project/
-
-
-## Licensing
-
-One really important part: Give your project a proper license. Here you should
-state what the license is and how to find the text version of the license.
-Something like:
-
-"The code in this project is licensed under MIT license."
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Product Name
-> Short blurb about what your product does.
-
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
-
-One to two paragraph statement about your product and what it does.
-
-![](header.png)
-
-## Installation
-
-OS X & Linux:
-
-```sh
-npm install my-crazy-module --save
-```
-
-Windows:
-
-```sh
-edit autoexec.bat
-```
-
-## Usage example
-
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
-
-_For more examples and usage, please refer to the [Wiki][wiki]._
-
-## Development setup
-
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
-
-```sh
-make install
-npm test
-```
-
-## Release History
-
-* 0.2.1
-    * CHANGE: Update docs (module code remains unchanged)
-* 0.2.0
-    * CHANGE: Remove `setDefaultXYZ()`
-    * ADD: Add `init()`
-* 0.1.1
-    * FIX: Crash when calling `baz()` (Thanks @GenerousContributorName!)
-* 0.1.0
-    * The first proper release
-    * CHANGE: Rename `foo()` to `bar()`
-* 0.0.1
-    * Work in progress
-
-## Meta
-
-Your Name – [@YourTwitter](https://twitter.com/dbader_org) – YourEmail@example.com
-
-Distributed under the XYZ license. See ``LICENSE`` for more information.
-
-[https://github.com/yourname/github-link](https://github.com/dbader/)
-
-## Contributing
-
-1. Fork it (<https://github.com/yourname/yourproject/fork>)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
-
-<!-- Markdown link & img dfn's -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/datadog-metrics
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
-[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-[wiki]: https://github.com/yourname/yourproject/wiki
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+The code in this project is licensed under MIT license.
