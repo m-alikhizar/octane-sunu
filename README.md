@@ -1,4 +1,5 @@
 # Octane-Sunu
+[![Build Status](https://travis-ci.org/khizar-ali/octane-sunu.svg?branch=master)](https://travis-ci.org/khizar-ali/octane-sunu)
 
 Decentralized Voting Dapp running on the ethereum (Rinkeby) testnet blockchain.
 
@@ -160,7 +161,7 @@ ng e2e
 Output:
 ![GitHub Logo](/src/assets/e2e-capture.png)
 
-# Code Covegate
+# Code Coverage
 
 
 With the Angular CLI we can create code coverage reports. This allow us to see any parts of our code base that may not be properly tested by our unit tests. The output of code coverage reports are created with `coverage` inside the root directory project. To see the code-coverage run the following:
@@ -179,23 +180,13 @@ script:
   - ganache-cli 1> /dev/null &
   - sleep 5
   - truffle compile
-  - truffle migrate --reset
+  - truffle migrate
   - truffle test
   - ng lint
   - ng test --watch false
   - npm run e2e
-  - ng build --base-href
+  - ng build --base-href --prod
 ```
-
-# Contributing
-
-* Bug fixes
-  - If you find a bug, please first report it using GitHub issues.
-  - If you'd like to submit a fix for a bug, create a Pull Request from your own fork and mention the issue number.
-*  New Features
-  - Describe the problem/feature request in a new GitHub issue.
-  - If you are developing a new feature. Please write corresponding Unit tests and e2e tests.
-
 
 # Deploy the application online with IPFS
 
@@ -220,4 +211,4 @@ ipfs daemon
 
 # Licensing
 
-The code in this project is licensed under MIT license.
+The code in this project is licensed under MIT license. [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
