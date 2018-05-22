@@ -1,13 +1,24 @@
 # Octane-Sunu
 
 Decentralized Voting Dapp running on the ethereum testnet blockchain.
-Published to QmQGSz2HnRVwGDBUKxSncwNdS4bV529wgiGJGZk9NP2z28: /ipfs/QmQj8QKwqkdvnzzNKXDahbFWL8fS3ccTVipdMBKag7tbMg
 
-# Prerequisites
+# Demo
+
+1. Install [MetaMask](https://metamask.io/) extension for your browser.
+2. Click on MetaMask icon, Select **Rinkeby Test Network** from upper right options dropdown.
+3. Create your wallet.
+4. Get some ethers from [here](https://faucet.rinkeby.io/)
+5. [Demo](https://gateway.ipfs.io/ipfs/QmQj8QKwqkdvnzzNKXDahbFWL8fS3ccTVipdMBKag7tbMg/#/)
+
+
+# Developing
+
+**Prerequisites**
 
 ```
 node ^9.11
 npm ^6.0.1
+Homebrew 1.6.0
 ```
 
 # Blockchain Setup
