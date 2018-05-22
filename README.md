@@ -1,6 +1,8 @@
 # Octane-Sunu
 
-Decentralized Voting Dapp running on the ethereum testnet blockchain.
+Decentralized Voting Dapp running on the ethereum (Rinkeby) testnet blockchain.
+
+![GitHub Logo](/src/assets/demo.gif)
 
 # Demo
 
