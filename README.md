@@ -8,8 +8,7 @@ Decentralized Voting Dapp running on the ethereum testnet blockchain.
 2. Click on MetaMask icon, Select **Rinkeby Test Network** from upper right options dropdown.
 3. Create your wallet.
 4. Get some ethers from [here](https://faucet.rinkeby.io/)
-5. [Demo](https://gateway.ipfs.io/ipfs/QmQj8QKwqkdvnzzNKXDahbFWL8fS3ccTVipdMBKag7tbMg/#/)
-
+5. [Demo](https://gateway.ipfs.io/ipfs/QmcMxWzjnTEx5p6Lmxo7Y4Z2JmQeDPZ3ikEahMs4UgsjHJ/#/)
 
 # Developing
 
