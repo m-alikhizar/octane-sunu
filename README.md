@@ -11,7 +11,8 @@ Decentralized Voting Dapp running on the ethereum (Rinkeby) testnet blockchain.
 2. Click on MetaMask icon, Select **Rinkeby Test Network** from upper right options dropdown.
 3. Create your wallet.
 4. Get some ethers from [here](https://faucet.rinkeby.io/)
-5. [Demo](https://gateway.ipfs.io/ipfs/QmcMxWzjnTEx5p6Lmxo7Y4Z2JmQeDPZ3ikEahMs4UgsjHJ/#/)
+5. [DM me for demo](https://twitter.com/khizar_manzoor)
+
 
 # Developing
 
@@ -207,7 +208,7 @@ ipfs daemon
 
 4. To publish the content, run `ipfs name publish <hash-of-dist-directory>`
 
-5. Navigate to https://gateway.ipfs.io/ipns/<your-publish-hash-here>
+5. [Navigate](https://gateway.ipfs.io/ipfs/QmcMxWzjnTEx5p6Lmxo7Y4Z2JmQeDPZ3ikEahMs4UgsjHJ/#/)
 
 # Licensing
 
