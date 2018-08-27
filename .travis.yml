@@ -35,9 +35,9 @@ script:
   - ganache-cli 1> /dev/null &
   - sleep 5
   - truffle compile
-  - truffle migrate --reset
+  - truffle migrate
   - truffle test
   - ng lint
   - ng test --watch false
   - npm run e2e
-  - ng build --base-href
+  - ng build --base-href --prod
