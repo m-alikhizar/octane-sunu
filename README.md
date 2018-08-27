@@ -210,6 +210,3 @@ ipfs daemon
 
 5. [Navigate](https://gateway.ipfs.io/ipfs/QmcMxWzjnTEx5p6Lmxo7Y4Z2JmQeDPZ3ikEahMs4UgsjHJ/#/)
 
-# Licensing
-
-The code in this project is licensed under MIT license. [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
