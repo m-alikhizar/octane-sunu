@@ -1,5 +1,5 @@
 # Octane-Sunu
-[![Build Status](https://travis-ci.org/khizar-ali/octane-sunu.svg?branch=master)](https://travis-ci.org/khizar-ali/octane-sunu)
+[![Build Status](https://travis-ci.org/khizarvaio/octane-sunu.svg?branch=master)](https://travis-ci.org/khizarvaio/octane-sunu)
 
 Decentralized Voting Dapp running on the ethereum (Rinkeby) testnet blockchain.
 
@@ -11,7 +11,7 @@ Decentralized Voting Dapp running on the ethereum (Rinkeby) testnet blockchain.
 2. Click on MetaMask icon, Select **Rinkeby Test Network** from upper right options dropdown.
 3. Create your wallet.
 4. Get some ethers from [here](https://faucet.rinkeby.io/)
-5. [DM me for demo](https://twitter.com/khizar_manzoor)
+5. [Demo](https://octane-sunu.herokuapp.com/)
 
 
 # Developing
