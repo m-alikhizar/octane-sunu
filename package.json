@@ -6,7 +6,8 @@
     "ng": "ng",
     "compile": "truffle compile; truffle migrate",
     "compile-start": "truffle compile; truffle migrate; ng serve",
-    "start": "ng serve",
+    "ng-start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -78,3 +79,4 @@
     "webpack-dev-server": "^3.1.4"
   }
 }
+zz
