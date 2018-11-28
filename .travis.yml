@@ -21,6 +21,7 @@ cache:
     - node_modules
 
 before_install:
+   - npm i -g npm@6.2.0
    - google-chrome-stable --headless --no-sandbox
 
 install:
