@@ -10,7 +10,7 @@ addons:
 
 language: node_js
 node_js:
-  - "g"
+  - "9"
 
 branches:
   only:
