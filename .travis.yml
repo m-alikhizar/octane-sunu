@@ -10,14 +10,17 @@ addons:
 
 language: node_js
 node_js:
-  - "9"
+  - "10"
 
 branches:
   only:
   - master
 
+cache:
+  directories:
+    - node_modules
+
 before_install:
-   - npm i -g npm@6.2.0
    - google-chrome-stable --headless --no-sandbox
 
 install:
