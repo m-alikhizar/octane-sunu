@@ -1,8 +1,22 @@
 <div class="columns">
   <div class="column is-6 is-offset-3">
     <div class="box is-shadowless">
-      <h1 class="title is-2">Accounts</h1>
-      <table class="table is-bordered is-fullwidth">
+      <div *ngIf="!accounts.length">
+        <ol>
+          <li>Install
+            <a href="https://metamask.io/" target="_blank">MetaMask</a> extension for your browser.</li>
+          <li>Click on MetaMask ext icon, Select Rinkeby Test Network from upper right options dropdown.</li>
+          <li>Create your wallet (new account).</li>
+          <li>Get some ethers from
+            <a href="https://faucet.rinkeby.io/" target="_blank">here</a>
+          </li>
+          <li>You will see your account listed here.
+            <strong>Proceed and Vote</strong>.</li>
+        </ol>
+      </div>
+
+      <h1 *ngIf="accounts.length" class="title is-2">Accounts</h1>
+      <table *ngIf="accounts.length" class="table is-bordered is-fullwidth">
         <thead>
           <tr>
             <th>No.</th>
@@ -14,7 +28,9 @@
           <tr *ngFor="let account of accounts | async; let i = index;">
             <td>{{i + 1}}</td>
             <td class="address">{{account.address}}</td>
-            <td><a href="#/home/{{account.address}}" class="button is-info is-outlined">Select</a></td>
+            <td>
+              <a href="#/home/{{account.address}}" class="button is-info is-outlined">Select</a>
+            </td>
           </tr>
         </tbody>
       </table>
