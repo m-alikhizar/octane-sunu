@@ -42,7 +42,7 @@ describe('AccountsComponent', () => {
 
   });
 
-  xit('should be populated with accounts of type AccountItem', () => {
+  it('should be populated with accounts of type AccountItem', () => {
     const expected = new AccountItem('abc');
 
     spyOn(web3Service, 'getAccounts').and.returnValue(Observable.create(observer => {

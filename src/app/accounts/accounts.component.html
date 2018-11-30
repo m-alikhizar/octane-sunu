@@ -1,22 +1,8 @@
 <div class="columns">
   <div class="column is-6 is-offset-3">
     <div class="box is-shadowless">
-      <div *ngIf="!accounts.length">
-        <ol>
-          <li>Install
-            <a href="https://metamask.io/" target="_blank">MetaMask</a> extension for your browser.</li>
-          <li>Click on MetaMask ext icon, Select Rinkeby Test Network from upper right options dropdown.</li>
-          <li>Create your wallet (new account).</li>
-          <li>Get some ethers from
-            <a href="https://faucet.rinkeby.io/" target="_blank">here</a>
-          </li>
-          <li>You will see your account listed here.
-            <strong>Proceed and Vote</strong>.</li>
-        </ol>
-      </div>
-
-      <h1 *ngIf="accounts.length" class="title is-2">Accounts</h1>
-      <table *ngIf="accounts.length" class="table is-bordered is-fullwidth">
+      <h1 class="title is-2">Accounts</h1>
+      <table class="table is-bordered is-fullwidth">
         <thead>
           <tr>
             <th>No.</th>
@@ -34,6 +20,21 @@
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <div>
+      <b>Instructions </b>
+      <ol>
+        <li>Install
+          <a href="https://metamask.io/" target="_blank">MetaMask</a> extension for your browser.</li>
+        <li>Click on MetaMask ext icon, Select Rinkeby Test Network from upper right options dropdown.</li>
+        <li>Create your wallet (new account).</li>
+        <li>Get some ethers from
+          <a href="https://faucet.rinkeby.io/" target="_blank">here</a>
+        </li>
+        <li>You will see your account listed here.
+          <strong>Proceed and Vote</strong>.</li>
+      </ol>
     </div>
   </div>
 </div>
