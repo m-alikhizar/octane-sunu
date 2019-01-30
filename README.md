@@ -1,5 +1,5 @@
 # Octane-Sunu
-# [![Build Status](https://travis-ci.org/khizarvaio/octane-sunu.svg?branch=master)](https://travis-ci.org/khizarvaio/octane-sunu)
+
 
 Decentralized Voting Dapp running on the ethereum (Rinkeby) testnet blockchain.
 
